@@ -1,0 +1,25 @@
+/*=======================================================================================*/
+/*                                  Global                                               */
+/*=======================================================================================*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html{    
+    font-family: monospace, serif;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--tundora);
+    background-color: var(--geyser);
+}
+
+.container{
+    width: 65%;
+    height: 100vh;
+    margin: auto;
+    padding-top: 20px;
+}
