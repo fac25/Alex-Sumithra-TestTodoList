@@ -2,6 +2,13 @@
 /*                                  Global                                               */
 /*=======================================================================================*/
 
+:root {
+    /* Colour variables */
+    --geyser: #DCE2E5;
+    --tundora:#443f3f;
+    --wedgewood: #47859A;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -22,4 +29,44 @@ body, html{
     height: 100vh;
     margin: auto;
     padding-top: 20px;
+}
+
+/*=======================================================================================*/
+/*                                  Form                                                 */
+/*=======================================================================================*/
+
+.header-h1 i{
+    padding-right: 15px;
+}
+
+.form-task *{
+    margin-top: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-task input[type=text]{
+    width: 500px;
+}
+
+.form-task input[type=submit]{
+    width: 100px;
+}
+
+#form-add-btn{
+    font-size: 1.01rem;
+    background-color: var(--wedgewood);
+}
+
+/*=======================================================================================*/
+/*                                   Media queries                                       */
+/*=======================================================================================*/
+
+@media screen and (max-width: 600px) {
+    .form-task input{
+        display: block;
+        max-width: 100%;
+    }
 }
