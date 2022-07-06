@@ -24,7 +24,9 @@ class UI {
   }
 
   static deleteTask(element) {
-    console.log(element);
+    if (element.classList.contains("delete")) {
+      element.parentElement.parentElement.remove();
+    }
   }
 
   static clearFields() {
@@ -49,9 +51,20 @@ class Store {
     const tasks = Store.getTasks();
     tasks.push(a_task);
     localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    return tasks;
   }
 
-  static removeTask() {}
+  static removeTask(deletedTask) {
+    const tasks = Store.getTasks();
+
+    tasks.forEach((task, index) => {
+      if (task) {
+        tasks.splice(index, 1);
+      }
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
 }
 
 // Event : Display Tasks
@@ -82,5 +95,5 @@ document.querySelector("#task-list").addEventListener("click", (e) => {
   UI.deleteTask(e.target);
 
   // Remove task from store
-  Store.removeTask();
+  Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
 });
