@@ -17,7 +17,9 @@ class UI {
 
     const tasks = document.createElement("tr");
 
-    tasks.innerHTML = `<td>${task.title}</td>
+    tasks.innerHTML = `
+    <td><input type=checkbox></td>
+    <td>${task.title}</td>
     <td><a href="#" class="delete">X</a></td>`;
 
     container.appendChild(tasks);
