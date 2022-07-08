@@ -79,16 +79,21 @@ document.querySelector(".form-task").addEventListener("submit", (e) => {
   // Get form values
   const title = document.querySelector("#form-task-name").value;
 
-  const task = new Task(title);
+  if(title.trim().length === 0){
+    alert("Please enter a task name");
+  }
+  else{
+    const task = new Task(title);
 
-  // ToDo: Add task to UI
-  UI.addTaskToList(task);
+    // ToDo: Add task to UI
+    UI.addTaskToList(task);
 
-  // Add task to store
-  Store.addTask(task);
+    // Add task to store
+    Store.addTask(task);
 
-  // Clear fields
-  UI.clearFields();
+    // Clear fields
+    UI.clearFields();
+  }
 });
 
 // Event: Remove a task
