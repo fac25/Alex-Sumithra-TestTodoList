@@ -61,7 +61,7 @@ class Store {
     const tasks = Store.getTasks();
 
     tasks.forEach((task, index) => {
-      if (task) {
+      if (task.title === deletedTask) {
         tasks.splice(index, 1);
       }
     });
