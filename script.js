@@ -98,9 +98,13 @@ document.querySelector(".form-task").addEventListener("submit", (e) => {
 
 // Event: Remove a task
 document.querySelector("#task-list").addEventListener("click", (e) => {
-  // Remove task from UI
-  UI.deleteTask(e.target);
+ 
+  if (e.target.classList.contains("delete")) 
+  {
+    // Remove task from UI
+    UI.deleteTask(e.target);
 
-  // Remove task from store
-  Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
+    // Remove task from store
+    Store.removeTask(e.target.parentElement.previousElementSibling.textContent);
+  }
 });
