@@ -18,7 +18,7 @@ class UI {
     const tasks = document.createElement("tr");
 
     tasks.innerHTML = `
-    <td><input type=checkbox></td>
+    <td><input class='checkbox' type=checkbox ></td>
     <td>${task.title}</td>
     <td><a href="#" class="delete">X</a></td>`;
 
@@ -79,10 +79,9 @@ document.querySelector(".form-task").addEventListener("submit", (e) => {
   // Get form values
   const title = document.querySelector("#form-task-name").value;
 
-  if(title.trim().length === 0){
+  if (title.trim().length === 0) {
     alert("Please enter a task name");
-  }
-  else{
+  } else {
     const task = new Task(title);
 
     // ToDo: Add task to UI
@@ -98,9 +97,7 @@ document.querySelector(".form-task").addEventListener("submit", (e) => {
 
 // Event: Remove a task
 document.querySelector("#task-list").addEventListener("click", (e) => {
- 
-  if (e.target.classList.contains("delete")) 
-  {
+  if (e.target.classList.contains("delete")) {
     // Remove task from UI
     UI.deleteTask(e.target);
 

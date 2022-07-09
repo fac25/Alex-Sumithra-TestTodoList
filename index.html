@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Todo List">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Todo List" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>To-Do List</title>
+    <title>To-Do List</title>
 
-        <!-- Link to Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-        
-        <!-- Custom CSS  -->
-        <link rel="stylesheet" href="./style.css" />
-    </head>
-    <body>
-        <div class="container">
+    <!-- Link to Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 
-            <header>
-                <h1 class="header-h1"><i class="fa-solid fa-list-check "></i>To-Do List</h1>
-            </header>
-        
-            <form class="form-task">
-                <input type="text" id="form-task-name" name="task-name" placeholder="Enter task to add....">
-                <input type="submit" id="form-add-btn" value="Add Task">
-            </form>
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="header-h1">
+          <i class="fa-solid fa-list-check"></i>To-Do List
+        </h1>
+      </header>
 
-            <div id="task-list-title"></div>
+      <form class="form-task">
+        <input
+          type="text"
+          id="form-task-name"
+          name="task-name"
+          placeholder="Enter task to add...."
+        />
+        <input type="submit" id="form-add-btn" value="Add Task" />
+      </form>
 
-            <table class="table-list" id="tableId">
-                <tbody id="task-list"></tbody>
-            </table>
-            
-        </div>
+      <div id="task-list-title"></div>
 
-        <script src="script.js"></script>
-        <script src="script.test.js"></script>
-        <script src="test-helpers.js"></script>
-    </body>
+      <table class="table-list" id="tableId">
+        <tbody id="task-list"></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="test-helpers.js"></script>
+    <script src="script.test.js"></script>
+  </body>
 </html>
