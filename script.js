@@ -16,6 +16,7 @@ class UI {
     const container = document.querySelector("#task-list");
 
     const tasks = document.createElement("tr");
+    tasks.className = "notes";
 
     tasks.innerHTML = `
     <td><input class='checkbox' type=checkbox ></td>
