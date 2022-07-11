@@ -1,27 +1,30 @@
-//Test ran before JS had loaded the dom and checkbox was returning null/undefined
-window.addEventListener("DOMContentLoaded", (event) => {
-  //Imiatating a user clicking the checkbox
-  test("Checking an entry marks it as complete", () => {
-    //Make an array of all checkboxes
-    const checkbox = Array.from(document.getElementsByClassName("checkbox"));
-    if (checkbox.length === 0) {
-      console.log("Add a note");
-    } else {
-      //Imitate the user clicking the box
-      checkbox[0].click();
+//Imiatating a user clicking the checkbox
+test("Checking an entry marks it as complete", () => {
+  //Make an array of all checkboxes
+  const input = document.querySelector("#form-task-name");
+  input.value = "text";
+  document.querySelector("input[type ='submit']").click();
+  const checkbox = document.getElementsByClassName("checkbox");
 
-      //When clicked the checkbox.checked should be true
-      equal(checkbox[0].checked, true);
+  //Imitate the user clicking the box
+  checkbox[0].click();
 
-      //Unclick so on load the checkbox isn't clicked
-      checkbox[0].click();
-    }
-  });
+  //When clicked the checkbox.checked should be true
+  equal(checkbox[0].checked, true);
 
-  /* test("Deleting an entry removes it from the list", () => {
-    const deleteLink = Array.from(document.getElementsByTagName("a"));
-    const notes = Array.from(document.getElementsByClassName("notes"));
-    deleteLink[0].click(notes.splice(0, 1), equal(notes.length, 0));
-  });
-  */
+  //Unclick so on load the checkbox isn't clicked
+  checkbox[0].click();
+  const deleted = document.querySelectorAll(".delete");
+  deleted[0].click();
+});
+
+test("Deleting an entry removes it from the list", () => {
+  const input = document.querySelector("#form-task-name");
+  input.value = "text";
+  document.querySelector("input[type ='submit']").click();
+  const deleted = document.querySelectorAll(".delete");
+  deleted[0].click();
+  //Tried to do the way Oli did in class today but I could only find offsetParent as the difference between if it's deleted or not
+  equal(deleted[0].offsetParent, null);
+  document.querySelector("#form-task-name").innerHTML = "";
 });
