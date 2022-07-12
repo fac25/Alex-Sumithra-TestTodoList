@@ -105,3 +105,34 @@ document.querySelector("#task-list").addEventListener("click", (e) => {
     store.removeTask(e.target.parentElement.previousElementSibling.textContent);
   }
 });
+
+// Display all tasks
+document.getElementById("all").addEventListener("click", () => {
+  const notes = document.getElementById("task-list").children;
+  Array.from(notes).forEach((note) => {
+    note.style.display = "block";
+  });
+});
+
+// Display active tasks
+document.getElementById("active").addEventListener("click", () => {
+  const notes = document.getElementById("task-list").children;
+  Array.from(notes).forEach((note) => {
+    if (note.querySelector("input").checked) {
+      note.style.display = "none";
+    } else {
+      note.style.display = "block";
+    }
+  });
+});
+
+document.getElementById("completed").addEventListener("click", () => {
+  const notes = document.getElementById("task-list").children;
+  Array.from(notes).forEach((note) => {
+    if (note.querySelector("input").checked) {
+      note.style.display = "block";
+    } else {
+      note.style.display = "none";
+    }
+  });
+});
