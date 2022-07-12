@@ -1,4 +1,3 @@
-
 // Task object
 function Task(title) {
   return { title };
@@ -7,13 +6,12 @@ function Task(title) {
 // UI: Handle UI Tasks
 
 const UI = {
-
-  displayTasks() {  
+  displayTasks() {
     const tasks = store.getTasks();
-    tasks.forEach((task) => UI.addTaskToList(task));  
+    tasks.forEach((task) => UI.addTaskToList(task));
   },
 
-  addTaskToList(task) {  
+  addTaskToList(task) {
     const container = document.querySelector("#task-list");
 
     const tasks = document.createElement("tr");
@@ -24,10 +22,10 @@ const UI = {
     <td>${task.title}</td>
     <td><a href="#" class="delete">X</a></td>`;
 
-    container.appendChild(tasks); 
+    container.appendChild(tasks);
   },
 
-  deleteTask(element) {  
+  deleteTask(element) {
     if (element.classList.contains("delete")) {
       element.parentElement.parentElement.remove();
     }
@@ -37,12 +35,10 @@ const UI = {
     document.querySelector("#form-task-name").value = "";
     // document.querySelector('#task-list').innerHTML = '';
   },
-}
-
+};
 
 // Store: Handles Storage
 const store = {
-
   getTasks() {
     let tasks;
     if (localStorage.getItem("tasks") === null) {
@@ -70,8 +66,8 @@ const store = {
       }
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
-  }
-}
+  },
+};
 
 // Event : Display Tasks
 document.addEventListener("DOMContentLoaded", UI.displayTasks);
@@ -108,4 +104,35 @@ document.querySelector("#task-list").addEventListener("click", (e) => {
     // Remove task from store
     store.removeTask(e.target.parentElement.previousElementSibling.textContent);
   }
+});
+
+// Display all tasks
+document.getElementById("all").addEventListener("click", () => {
+  const notes = document.getElementById("task-list").children;
+  Array.from(notes).forEach((note) => {
+    note.style.display = "block";
+  });
+});
+
+// Display active tasks
+document.getElementById("active").addEventListener("click", () => {
+  const notes = document.getElementById("task-list").children;
+  Array.from(notes).forEach((note) => {
+    if (note.querySelector("input").checked) {
+      note.style.display = "none";
+    } else {
+      note.style.display = "block";
+    }
+  });
+});
+
+document.getElementById("completed").addEventListener("click", () => {
+  const notes = document.getElementById("task-list").children;
+  Array.from(notes).forEach((note) => {
+    if (note.querySelector("input").checked) {
+      note.style.display = "block";
+    } else {
+      note.style.display = "none";
+    }
+  });
 });
