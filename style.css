@@ -3,103 +3,107 @@
 /*=======================================================================================*/
 
 :root {
-    /* Colour variables */
-    --alto:#dbdbdb;
-    --geyser: #DCE2E5;
-    --scarlet:#F32013;
-    --tundora:#443f3f;
-    --wedgewood: #47859A;
+  /* Colour variables */
+  --alto: #dbdbdb;
+  --geyser: #dce2e5;
+  --scarlet: #f32013;
+  --tundora: #443f3f;
+  --wedgewood: #47859a;
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body, html{    
-    font-family: monospace, serif;
-    font-size: 1rem;
-    text-align: center;
-    margin-top: 10px;
-    color: var(--tundora);
-    background-color: var(--geyser);
+body,
+html {
+  font-family: monospace, serif;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--tundora);
+  background-color: var(--geyser);
 }
 
-.container{
-    width: 65%;
-    height: 100vh;
-    margin: auto;
-    padding-top: 20px;
-}
-
-a{
-    text-decoration: none;
-    color: var(--scarlet);
+.container {
+  width: 65%;
+  height: 100vh;
+  margin: auto;
+  padding-top: 20px;
 }
 
 /*=======================================================================================*/
 /*                                  Form                                                 */
 /*=======================================================================================*/
 
-.header-h1 i{
-    padding-right: 15px;
+.header-h1 i {
+  padding-right: 15px;
 }
 
-.form-task *{
-    margin-top: 40px;
-    height: 40px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+.form-task * {
+  margin-top: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }
 
-.form-task input[type=text]{
-    width: 500px;
+.form-task input[type="text"] {
+  width: 500px;
 }
 
-.form-task input[type=submit]{
-    width: 100px;
+.form-task input[type="submit"] {
+  width: 100px;
 }
 
-#form-add-btn{
-    font-size: 1.01rem;
-    background-color: var(--wedgewood);
+#form-add-btn {
+  font-size: 1.01rem;
+  background-color: var(--wedgewood);
 }
 
 /*=======================================================================================*/
 /*                                  Task List                                            */
 /*=======================================================================================*/
-#task-list-title{
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 400px;
+#task-list-title {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 400px;
 }
-#task-list{
-    margin-top: 20px;
-    padding: 20px;
-    width: 400px;
-}
-
-.table-list{
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
+#task-list {
+  margin-top: 20px;
+  padding: 20px;
+  width: 400px;
 }
 
-td, th {
-    border-top: 1px solid  var(--alto);
-    text-align: left;
-    padding: 0.5rem;
-} 
+.table-list {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
 
+td,
+th {
+  border-top: 1px solid var(--alto);
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.delete {
+  text-decoration: none;
+  color: var(--scarlet);
+  border: none;
+  background-color: var(--geyser);
+  cursor: pointer;
+}
 /*=======================================================================================*/
 /*                                   Media queries                                       */
 /*=======================================================================================*/
 
 @media screen and (max-width: 600px) {
-    .form-task input{
-        display: block;
-        max-width: 100%;
-    }
+  .form-task input {
+    display: block;
+    max-width: 100%;
+  }
 }

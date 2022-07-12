@@ -1,4 +1,3 @@
-
 // Task object
 function Task(title) {
   return { title };
@@ -7,13 +6,12 @@ function Task(title) {
 // UI: Handle UI Tasks
 
 const UI = {
-
-  displayTasks() {  
+  displayTasks() {
     const tasks = store.getTasks();
-    tasks.forEach((task) => UI.addTaskToList(task));  
+    tasks.forEach((task) => UI.addTaskToList(task));
   },
 
-  addTaskToList(task) {  
+  addTaskToList(task) {
     const container = document.querySelector("#task-list");
 
     const tasks = document.createElement("tr");
@@ -22,12 +20,12 @@ const UI = {
     tasks.innerHTML = `
     <td><input class='checkbox' type=checkbox ></td>
     <td>${task.title}</td>
-    <td><a href="#" class="delete">X</a></td>`;
+    <td><button href="#" class="delete">X</button></td>`;
 
-    container.appendChild(tasks); 
+    container.appendChild(tasks);
   },
 
-  deleteTask(element) {  
+  deleteTask(element) {
     if (element.classList.contains("delete")) {
       element.parentElement.parentElement.remove();
     }
@@ -37,12 +35,10 @@ const UI = {
     document.querySelector("#form-task-name").value = "";
     // document.querySelector('#task-list').innerHTML = '';
   },
-}
-
+};
 
 // Store: Handles Storage
 const store = {
-
   getTasks() {
     let tasks;
     if (localStorage.getItem("tasks") === null) {
@@ -70,8 +66,8 @@ const store = {
       }
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
-  }
-}
+  },
+};
 
 // Event : Display Tasks
 document.addEventListener("DOMContentLoaded", UI.displayTasks);
