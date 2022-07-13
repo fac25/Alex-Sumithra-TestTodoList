@@ -110,7 +110,7 @@ document.querySelector("#task-list").addEventListener("click", (e) => {
 document.getElementById("all").addEventListener("click", () => {
   const notes = document.getElementById("task-list").children;
   Array.from(notes).forEach((note) => {
-    note.style.display = "block";
+    note.style.display = "table-row";
   });
 });
 
@@ -121,16 +121,17 @@ document.getElementById("active").addEventListener("click", () => {
     if (note.querySelector("input").checked) {
       note.style.display = "none";
     } else {
-      note.style.display = "block";
+      note.style.display = "table-row";
     }
   });
 });
 
+//Display completed tasks
 document.getElementById("completed").addEventListener("click", () => {
   const notes = document.getElementById("task-list").children;
   Array.from(notes).forEach((note) => {
     if (note.querySelector("input").checked) {
-      note.style.display = "block";
+      note.style.display = "table-row";
     } else {
       note.style.display = "none";
     }
