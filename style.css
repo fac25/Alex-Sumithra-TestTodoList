@@ -9,6 +9,7 @@
   --scarlet: #f32013;
   --tundora: #443f3f;
   --wedgewood: #47859a;
+  --white: #ffffff;
 }
 
 * {
@@ -61,6 +62,27 @@ html {
 #form-add-btn {
   font-size: 1.01rem;
   background-color: var(--wedgewood);
+}
+
+#filterButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 2rem;
+}
+
+#filterButtons button {
+  font-size: 1.01rem;
+  background-color: var(--wedgewood);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+#filterButtons button:hover {
+  color: var(--white);
 }
 
 /*=======================================================================================*/

@@ -126,6 +126,7 @@ document.getElementById("active").addEventListener("click", () => {
   });
 });
 
+//Display completed tasks
 document.getElementById("completed").addEventListener("click", () => {
   const notes = document.getElementById("task-list").children;
   Array.from(notes).forEach((note) => {
