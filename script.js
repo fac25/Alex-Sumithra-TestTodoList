@@ -19,7 +19,7 @@ const UI = {
 
     tasks.innerHTML = `
     <td><input class='checkbox' type=checkbox ></td>
-    <td>${task.title}</td>
+    <td><p>${task.title}</p></td>
     <td><button href="#" class="delete">X</button></td>`;
 
     container.appendChild(tasks);
@@ -104,6 +104,19 @@ document.querySelector("#task-list").addEventListener("click", (e) => {
     // Remove task from store
     store.removeTask(e.target.parentElement.previousElementSibling.textContent);
   }
+
+  if (e.target.classList.contains("checkbox")) {
+    
+    const checkboxes = document.querySelectorAll(".checkbox");
+
+    checkboxes.forEach((checkbox) => {
+      if(checkbox.checked){
+        checkbox.parentElement.parentElement.children[1].style.textDecoration = "line-through";
+      }else{
+        checkbox.parentElement.parentElement.children[1].style.textDecoration = "none";
+      }
+    });
+  }
 });
 
 // Display all tasks
@@ -137,3 +150,4 @@ document.getElementById("completed").addEventListener("click", () => {
     }
   });
 });
+
