@@ -28,3 +28,16 @@ test("Deleting an entry removes it from the list", () => {
   equal(deleted[0].offsetParent, null);
   document.querySelector("#form-task-name").innerHTML = "";
 });
+
+// Check adding tasks to the list
+test("Add tasks to the list", () => {
+  const input = document.querySelector("#form-task-name");
+  input.value = "Test Task";
+  document.querySelector("input[type ='submit']").click();
+  const todos = document.querySelectorAll("#task-list");
+  equal(todos.length, 1);
+
+  // Do a clean up for next test.
+  const deleted = document.querySelectorAll(".delete");
+  deleted[0].click();
+});
