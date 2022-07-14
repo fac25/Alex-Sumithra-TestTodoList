@@ -5,11 +5,14 @@
 :root {
   /* Colour variables */
   --alto: #dbdbdb;
-  --geyser: #dce2e5;
-  --scarlet: #f32013;
+  --black:#000000;
+  --charcoal:#203C46;
+  --gainsboro: #dce2e5;
+  --mahogany:#B84D00;
   --tundora: #443f3f;
   --wedgewood: #47859a;
   --white: #ffffff;
+  
 }
 
 * {
@@ -20,13 +23,13 @@
 
 body,
 html {
-  font-family: monospace, serif;
+  font-family: Times, monospace, serif;
   font-size: 1rem;
   text-align: center;
-  margin-top: 10px;
-  color: var(--tundora);
-  background-color: var(--geyser);
-}
+  margin-top: 20px;
+  color: var(--black);
+  background: rgb(220,226,229);
+  background: radial-gradient(circle, rgba(220,226,229,1) 0%, rgba(157,197,210,1) 100%);}
 
 .container {
   width: 65%;
@@ -41,11 +44,20 @@ html {
 
 .header-h1 i {
   padding-right: 15px;
+  color: var(--mahogany);
+}
+
+.form-task {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-task * {
-  margin-top: 40px;
   height: 40px;
+  margin-top: 40px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -61,42 +73,56 @@ html {
 
 #form-add-btn {
   font-size: 1.01rem;
-  background-color: var(--wedgewood);
+  color: var(--white);
+  background-color: var(--mahogany);
+}
+
+#form-add-btn:hover {
+  cursor: pointer;
+  opacity: .5;
+  transition: .9s;
+  border: 1px solid black;
 }
 
 #filterButtons {
   display: flex;
   flex-direction: row;
+  gap: 2rem;
   justify-content: center;
   margin-top: 1.5rem;
-  gap: 2rem;
 }
 
 #filterButtons button {
+  flex-basis: 100px; /* default the size of each flex item to be same */
   font-size: 1.01rem;
-  background-color: var(--wedgewood);
+  padding: 0.5rem;
   border: none;
   border-radius: 5px;
-  padding: 0.5rem;
   cursor: pointer;
+  color: var(--white);
+  background-color: var(--charcoal);
 }
 
-#filterButtons button:hover {
-  color: var(--white);
+#filterButtons button:hover{
+  cursor: pointer;
+  opacity: .5;
+  transition: .9s;
 }
+
 
 /*=======================================================================================*/
 /*                                  Task List                                            */
 /*=======================================================================================*/
 #task-list-title {
+  width: 400px;
   margin: 0 auto;
   margin-top: 20px;
-  width: 400px;
+  
 }
 #task-list {
+  width: 400px;
   margin-top: 20px;
   padding: 20px;
-  width: 400px;
 }
 
 .table-list {
@@ -107,25 +133,17 @@ html {
 
 td,
 th {
-  border-top: 1px solid var(--alto);
   text-align: left;
   padding: 0.5rem;
+  font-size: 1.3rem;
+  border-top: 1px solid var(--alto);
 }
 
 .delete {
-  text-decoration: none;
-  color: var(--scarlet);
-  border: none;
-  background-color: var(--geyser);
   cursor: pointer;
-}
-/*=======================================================================================*/
-/*                                   Media queries                                       */
-/*=======================================================================================*/
-
-@media screen and (max-width: 600px) {
-  .form-task input {
-    display: block;
-    max-width: 100%;
-  }
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  color: var(--mahogany);
+  background-color: inherit;
 }
