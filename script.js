@@ -19,7 +19,7 @@ const UI = {
 
     tasks.innerHTML = `
     <td><input class='checkbox' type=checkbox ></td>
-    <td><p>${task.title}</p></td>
+    <td>${task.title}</td>
     <td><button href="#" class="delete">X</button></td>`;
 
     container.appendChild(tasks);
@@ -80,11 +80,18 @@ document.querySelector(".form-task").addEventListener("submit", (e) => {
   const title = document.querySelector("#form-task-name").value;
 
   if (title.trim().length === 0) {
-    alert("Please enter a task name");
+
+    const err = document.querySelector("#errorMsg");
+    
+    err.textContent = "Please enter a task name";
+    setTimeout(() => {
+      err.textContent = "";
+    }, 1500);  
+
   } else {
     const task = Task(title);
 
-    // ToDo: Add task to UI
+    // Add task to UI
     UI.addTaskToList(task);
 
     // Add task to store
@@ -95,8 +102,10 @@ document.querySelector(".form-task").addEventListener("submit", (e) => {
   }
 });
 
-// Event: Remove a task
+// Event: Task click
 document.querySelector("#task-list").addEventListener("click", (e) => {
+
+  // Remove a task
   if (e.target.classList.contains("delete")) {
     // Remove task from UI
     UI.deleteTask(e.target);
@@ -105,6 +114,7 @@ document.querySelector("#task-list").addEventListener("click", (e) => {
     store.removeTask(e.target.parentElement.previousElementSibling.textContent);
   }
 
+  // Checkbox checked/unchecked
   if (e.target.classList.contains("checkbox")) {
     
     const checkboxes = document.querySelectorAll(".checkbox");
