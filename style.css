@@ -147,3 +147,11 @@ th {
   color: var(--mahogany);
   background-color: inherit;
 }
+
+
+#errorMsg{
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--mahogany);
+}

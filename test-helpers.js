@@ -23,3 +23,10 @@ function test(name, testFunction) {
   testFunction();
   console.groupEnd(name);
 }
+
+
+function describe(name, testFunction) {
+  console.group(name);
+  testFunction();
+  console.groupEnd(name);
+}
